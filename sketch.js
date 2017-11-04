@@ -20,7 +20,7 @@ function setup() {
 }
 
 function draw() {
-  text("a: " + a, 200, 200);
+  text(a, 200, 200);
   text("b: " + b, 300, 300);
   rect(50,50,30,30);
 }
