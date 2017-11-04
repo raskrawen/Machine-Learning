@@ -17,11 +17,12 @@ function setup() {
     b=b+error*learningRate;
   }
 }
-text("a: " + a, 200, 200);
-text("b: " + b, 300, 300);
+
 }
 
 function draw() {
+  text("a: " + a, 200, 200);
+  text("b: " + b, 300, 300);
   rect(50,50,30,30);
 }
 
