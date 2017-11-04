@@ -1,6 +1,6 @@
 var learningRate=0.001;
 var epochs=100;
-points = [[0,0];[1,1];[3,7]];
+var points = [[0,0];[1,1];[3,7]];
 var a=1;
 var b=0;
 var y=0;
