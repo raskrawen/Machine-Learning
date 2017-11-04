@@ -21,7 +21,7 @@ print (b);
 }
 
 function draw() {
-  //rect(50,50,30,30);
+  rect(50,50,30,30);
 }
 
 
