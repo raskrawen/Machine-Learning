@@ -17,8 +17,8 @@ function setup() {
     b=b+error*learningRate;
   }
 }
-print (a);
-print (b);
+text(a, 200, 200);
+text("b", 300, 300);
 }
 
 function draw() {
