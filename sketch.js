@@ -8,6 +8,7 @@ var x=0;
 
 function setup() {
   createCanvas(1000,1000);
+  backgroundcolor
   for (var i=0; i<epochs; i++) { 
   for (var j=0; j<3; j++) {
     y=a*points[j][0]+b;        
@@ -16,8 +17,8 @@ function setup() {
     b=b+error*learningRate;
   }
 }
-//print (a);
-//print (b);
+print (a);
+print (b);
 }
 
 function draw() {
