@@ -1,20 +1,25 @@
+/*
+For some reason, the script runs differently on mobile browsers (Chrome).
+
+*/
+
 var learningRate=0.001;
 var points = [[0,2],[2,5],[7,9]];
-var a=1;
-var b=0;
+var a=1; // slope
+var b=0; // intersection
 var y=0;
 var x=0;
 var aSlider; //slider 
 var epochsOld=0;
-var epochs=10;
+var epochs=10;  //start EPOCHS = number of iterations on the full dataset
 var learningRateOld = 0;
-var origoX = 50;
-var origoY = 500;
-var k=255;
-var epoch=0;
-var button1;
-var buttonStart;
-var id;
+var origoX = 50; //coordinate system origo X
+var origoY = 500;  //coordinate system origo Y
+var k=255;  // colour of dots
+var epoch=0; //EPOCH number
+var button1; //button for reset
+var buttonStart; //button for train
+var id; // delay function variable
 
   
 function setup() { // runs once
@@ -29,26 +34,26 @@ button1.position(200,10);
 button1.mousePressed(reset);
 buttonStart = createButton ("train");
 buttonStart.position(200,50);
-buttonStart.mousePressed(start);
+buttonStart.mousePressed(start); //when "train" button is pressed run start function
   
   }
 
 function start() {
-  epochs = aSlider.value();
-  learningRate = bSlider.value()/1000;
-  train(epochs,learningRate);
+  epochs = aSlider.value(); // read slider a.
+  learningRate = bSlider.value()/1000; //read slider b.
+  train(epochs,learningRate); //run train
 }
 
 function reset() {
   clear();
-a=1;
-b=0;
+a=1; // reset slope
+b=0; //reset intersection
 //  learningRate=0.01;
 //  epochs=10;
-  writer();
-  drawPoints(points,origoX, origoY);
-  drawLine(a,b,origoX, origoY);
-  clearInterval(id);
+  writer(); // draw box 
+  drawPoints(points,origoX, origoY); //draw points
+  drawLine(a,b,origoX, origoY); //draw first line
+  clearInterval(id); //stop delays
 }
 
 function drawPoints(points1,origoX, origoY) {
@@ -68,14 +73,14 @@ function drawPoints(points1,origoX, origoY) {
 
 function drawLine(a,b,origoX, origoY) {
   // first point at x=0:
-  k=k+5;
+  k=k+5; // not sure about the use of this
   var y = map(b,0,10,0,200,true);
   var pointsInLine = [[origoX,origoY-y]];
  //second point:
  if (a>=1) { 
   y=200; // correlates to y=10
   var x=(10-b)/a;
-  x=map(x,0,10,0,200,true);
+  x=map(x,0,10,0,200,true); //true
  }
  else {
   var x=200; //x at max, x=10= 200 px
