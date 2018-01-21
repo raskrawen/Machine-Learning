@@ -1,6 +1,5 @@
 /*
-For some reason, the script runs differently on mobile browsers (Chrome).
-
+For some reason, the script runs differently on certain (older?) browsers (Chrome).
 */
 
 var learningRate=0.001;
