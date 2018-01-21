@@ -74,7 +74,7 @@ function drawPoints(points1,origoX, origoY) {
 function drawLine(a,b,origoX, origoY) {
   // first point at x=0:
   k=k+5; // not sure about the use of this
-  var y = map(b,0,10,0,200,true);
+  var y = map(b,0,10,0,200,true); //true:= y cannot go outside boundaries
   var pointsInLine = [[origoX,origoY-y]];
  //second point:
  if (a>=1) { 
@@ -105,16 +105,16 @@ function train(epochs,learningRate) {
 function oneTraining() {
   epoch++;
   for (var j=0; j<3; j++) {
-    y=a*points[j][0]+b;        
-    error=points[j][1]-y;
-    a=a+points[j][0]*error*learningRate;
-    b=b+error*learningRate;
+    y=a*points[j][0]+b; //calculate guess Y-value from dataset       
+    error=points[j][1]-y; //calculate real Y-value minus guess value
+    a=a+points[j][0]*error*learningRate; //update slope with d(error)/d(a)* error * Learningrate
+    b=b+error*learningRate; //update b with d(error)/d(b) * error * learningrate. d(error)/d(b)=0
     }
   drawLine (a,b,origoX,origoY);
   writer();
   if (epoch>=epochs) { //when number of epochs exceeds epochs target: stop
-    clearInterval(id);
-    epoch=0;
+    clearInterval(id); //stop delays
+    epoch=0; // reset epoch number
   }
 }
 
