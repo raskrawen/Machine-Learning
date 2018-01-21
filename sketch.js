@@ -23,7 +23,7 @@ var id; // delay function variable
 
   
 function setup() { // runs once
-  createCanvas(400,550);
+  createCanvas(400,600);
 reset();
 aSlider = createSlider(0,100,10); // slider. Numbers from 0 to 100, jumps of 10, EPOCHS.
   aSlider.position(50,50);
@@ -122,7 +122,7 @@ function oneTraining() {
 function writer() {
   clearTextArea(); //function which clears text
   noFill();
-  rect(50,300,200,200); //coordinate system
+  rect(50,300,200,200); //coordinate system at 50, 300. Dimensions 200x200
   fill(0);
   drawPoints(points, origoX, origoY);
  // drawLine(a,b, origoX, origoY);
@@ -134,7 +134,7 @@ text("b:" + b, 50, 220);
 text("epoch: " + epoch, 50, 240);
 text("epochs: " + epochs, 50, 260);
 text("learning rate:" + learningRate, 50, 280);
-
+text("Will only work properly in newer versions of Chrome", 50, 550);
 }
 
 function clearTextArea() {
