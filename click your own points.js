@@ -23,7 +23,7 @@ var numberOfPoints = 0;
 
   
 function setup() { // runs once
-  createCanvas(400,600);
+  createCanvas(600,600);
 reset();
 aSlider = createSlider(0,100,10); // slider. Numbers from 0 to 100, jumps of 10, EPOCHS.
   aSlider.position(50,50);
@@ -163,7 +163,8 @@ text("b:" + b, 50, 220);
 text("epoch: " + epoch, 50, 240);
 text("epochs: " + epochs, 50, 260);
 text("learning rate:" + learningRate, 50, 280);
-text("Will only work properly in newer versions of Chrome", 50, 550);
+color('black');
+  text("Will only work properly in newer versions of Chrome", 50, 550);
 }
 
 function clearTextArea() {
