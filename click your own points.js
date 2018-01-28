@@ -88,14 +88,14 @@ b=0; //reset intersection
 function drawPoints(points1,origoX, origoY) {
   var x1;
   var y1;
-  fill(204, 101, 192, 127);
+  fill(204, 101, 192, 127); //purple fill
   stroke(127, 63, 120);
   for (var j=0; j<3; j++) { // draw three points
     x1=map(points1[j][0],0,10,0,200);
     y1=map(points1[j][1],0,10,0,200);
     ellipse(x1+origoX, origoY-y1, 10, 10); 
   }
-  noFill();
+  fill(0); // black fill returns
   stroke(0,0,0);
 }
 
@@ -150,21 +150,21 @@ function oneTraining() {
 
 function writer() {
   clearTextArea(); //function which clears text
-  noFill();
+  noFill(); //invisible fill
   rect(50,300,200,200); //coordinate system at 50, 300. Dimensions 200x200
-  fill(0);
+  fill(0); //black fill
   drawPoints(points, origoX, origoY);
  // drawLine(a,b, origoX, origoY);
   textSize(20);
- text("Epochs",50,40);
- text("Learning rate",50,110);
-   text("a: " + a, 50, 200);
+fill(0, 102, 153); // blue text
+text("Epochs",50,40);
+text("Learning rate",50,110);
+text("a: " + a, 50, 200);
 text("b:" + b, 50, 220);
 text("epoch: " + epoch, 50, 240);
 text("epochs: " + epochs, 50, 260);
 text("learning rate:" + learningRate, 50, 280);
-color('black');
-  text("Will only work properly in newer versions of Chrome", 50, 550);
+text("Will only work properly in newer versions of Chrome", 50, 550);
 }
 
 function clearTextArea() {
