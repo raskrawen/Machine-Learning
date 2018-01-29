@@ -164,13 +164,14 @@ text("b:" + b, 50, 220);
 text("epoch: " + epoch, 50, 240);
 text("epochs: " + epochs, 50, 260);
 text("learning rate:" + learningRate, 50, 280);
-text("Will only work properly in newer versions of Chrome", 50, 550);
+text("May not work properly in mobile browsers.", 50, 550);
 }
 
 function clearTextArea() {
   fill(255); //white fill
     noStroke(); // no border
     rect(0,0,1000,290); //clears "Epochs"
+    rect(0,540,1000,600); // clears "May not work properly.." text
     fill(0); //black fill return
     stroke(0); //black border return
 }
