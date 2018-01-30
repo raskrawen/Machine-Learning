@@ -19,7 +19,7 @@ var epoch=0; //EPOCH number
 var button1; //button for reset
 var buttonStart; //button for train
 var id; // delay function variable
-var numberOfPoints = 0;
+var numberOfPoints = 3;
 
   
 function setup() { // runs once
@@ -47,9 +47,9 @@ if ((mouseX>50) && (mouseX<250) && (mouseY>300) && (mouseY<500)) {
   //need to map points to 10x10 coordinate system
   var newX=map(mouseX,50,250,0,10);
   var newY=map(mouseY,500,300,0,10);
-  
-  saveAPoint(newX,newY); //save point in array
   numberOfPoints++; //increment nr o points counter
+  saveAPoint(newX,newY); //save point in array
+  
   }
 //if (numberOfPoints == 3) { //print after three clicks
   //print(points);
@@ -62,6 +62,8 @@ function saveAPoint(x,y) {
   onePoint = [x,y];
   append (points,onePoint);
   console.log(points);
+  //numberOfPoints++;
+  console.log(numberOfPoints);
 }
 
 
@@ -73,7 +75,7 @@ function start() {
 
 function reset() {
   points = [[0,2],[2,5],[7,9]]; //usual three points
-  numberOfPoints = 0; // number of extra points
+  numberOfPoints = 3; // number of extra points
   clear();
 a=1; // reset slope
 b=0; //reset intersection
@@ -133,7 +135,7 @@ function train(epochs,learningRate) {
 
 function oneTraining() {
   epoch++;
-  for (var j=0; j<3+numberOfPoints; j++) { //run for each dataset
+  for (var j=0; j<numberOfPoints; j++) { //run for each dataset
     y=a*points[j][0]+b; //calculate guess Y-value from dataset       
     error=points[j][1]-y; //calculate real Y-value minus guess value
     a=a+points[j][0]*error*learningRate; //update slope with d(error)/d(a)* error * Learningrate
